@@ -1,0 +1,202 @@
+@import "mixins"; 
+@import "colors"; 
+@import "typography"; 
+@import "animations"; 
+
+.contact {
+    position: relative;
+    height: auto;  
+    padding-bottom: 6em; 
+    background: url( ../../app/images/contact-background.png ) no-repeat center center;  
+    background-attachment: fixed; 
+    background-size: auto; 
+    max-width: 100%; 
+    @include dark-background;
+    padding-top: 2em; 
+    
+
+    .main-contact {
+        width: 100%;
+        margin: 40px 0 20px; 
+        display: flex;
+        justify-content: center; 
+        color: white; 
+        margin-bottom: 2em; 
+        font-weight: 700; 
+        font-size: 2.25rem;
+
+        span {
+            padding: 0; 
+        }
+
+        .bottom-border {
+            border-bottom: 2px solid white; 
+            width: 32em; 
+        }
+    }
+
+    .personal {
+        max-width: 100%;
+        color: white;
+
+        h5 {
+            margin: 0 auto; 
+            font-weight: 700; 
+
+            span {
+                padding-right: 0.25em; 
+            }
+        }
+
+        p {
+            margin: 4px auto 2em; 
+            font-size: 0.98rem;
+
+            &:nth-child(8) {
+                font-size: 2rem; 
+            }
+        }
+    }
+
+    .contactform {
+        max-width: 100%;
+        color: white; 
+
+        .form-group {
+
+            &:first-child {
+                margin-right: 1em;
+            }
+
+            input,
+            textarea {
+                background-color: transparent;
+                border-color: white; 
+                color: white; 
+
+                &::-webkit-input-placeholder { 
+                    color: white;
+                }
+                &:-ms-input-placeholder { 
+                    color: white;
+                }
+                &::-moz-placeholder { 
+                    color: white;
+                    opacity: 1;
+                }
+                &:-moz-placeholder { 
+                    color: white;
+                    opacity: 1;
+                }
+            }
+
+            input.form-control {
+                height: 50px; 
+                max-width: 100%;
+            }
+
+            textarea.form-control {
+                height: 250px; 
+                max-width: 100%;
+            }
+            
+        }
+
+        .btn {
+            display: flex;
+            margin-left: auto; 
+            padding: 12px 36px;
+            cursor: pointer; 
+        }
+    }
+
+    .outro {
+        margin-top: 1em;
+
+        .headshot {
+            display: block;
+            margin: 0 auto; 
+        }
+
+        .excerpt {
+            color: white;
+            font-size: 1.1rem;
+            word-spacing: 0.1em;  
+            font-family: $font_sans;
+
+            p {
+                width: 85%;
+                margin: 2em auto 1em;
+            }
+        }
+    }
+}
+
+.copyright {
+    @include stick-copyright; 
+
+    p {
+        margin-top: 1em;
+        margin-bottom: 0; 
+    }
+}
+
+//submit 
+.display_none {
+    display: none; 
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 1em; 
+
+    &.error {
+        color: red;
+        font-size: 1.2rem; 
+        font-weight: bold; 
+    }
+
+    &.success {
+        color: green; 
+        font-size: 1.8rem; 
+        font-weight: bold; 
+
+        span {
+            padding-right: 0.5em; 
+        }
+    }
+}
+
+//responsive
+@media (min-width: 1550px) {
+    .contact {
+        background-size: cover; 
+    }
+}
+
+//animations 
+.is-visible {
+     
+    &.portrait {
+        animation: xIn .5s 1.25s ease-out both,
+                   fadeIn .5s 1.25s ease-out both;
+    }
+
+    &.phone {
+        animation: xIn .5s ease-out both,
+                   fadeIn .5s ease-out both;
+    }
+
+    &.email {
+        animation: xIn .5s .25s ease-out both,
+                   fadeIn .5s .25s ease-out both;
+    }
+
+    &.location {
+        animation: xIn .5s .5s ease-out both,
+                   fadeIn .5s .5s ease-out both;
+    }
+
+    &.connect {
+        animation: xIn .5s .75s  ease-out both,
+                   fadeIn .5s .75s  ease-out both;
+    }
+}

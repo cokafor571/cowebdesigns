@@ -1,0 +1,175 @@
+@import "colors"; 
+@import "animations"; 
+
+// set up 
+html {
+    height: 100%; 
+}
+
+body {
+    height: 100%; 
+    position: relative; 
+
+    #react-container {
+        height: 100%;
+
+        .app {
+            height: 100%; 
+        }
+    }
+}
+
+#react-container > div {
+    height: 100%;
+}
+
+//header 
+.header {
+    height: 100%; 
+    
+    .section {
+        width: 100%; 
+        height: 100%;
+        background: url(http://dq21c15nyx2l2.cloudfront.net/portfolio/portfolio-pic.png) no-repeat center center;
+        padding: 90px 0; 
+        display: table;
+        position: relative; 
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            float: left;
+            background: rgba(0,0,0,0.5); 
+        }
+
+        .center {
+            display: table-cell;
+            vertical-align: middle; 
+            width: 100%;
+            height: 100%; 
+
+            .headline {
+                margin: 0 auto; 
+                text-align: center; 
+
+                .cv {
+                    font-size: 2.2rem;
+                    font-weight: 700;
+                    margin-bottom: 0; 
+                    color: white;
+                }
+
+                .tag {
+                    font-size: 4.5rem;
+                    color: $primary-color; 
+                    font-weight: 700; 
+                }
+
+                .capture {
+                    font-size: 1.25rem;
+                    color: white; 
+                    margin-bottom: 0; 
+                }
+
+                .btn-lg {
+                    margin-top: 3em;
+                    padding: .55rem 1.25rem;
+                    cursor: pointer; 
+
+                    span {
+                        margin: 0 .5em 0 1em;
+                    }
+                }
+            }
+        }
+
+        p {
+
+            svg {
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                bottom: 20px;
+                margin-left: -20px;
+                fill: $primary-color; 
+
+                animation: bounce 0.75s linear infinite; 
+            }
+        }
+    }
+
+    // navigation
+    .navbar {
+        padding-left: 4em; 
+        padding-top: 1em;
+        transition: background 0.8s ease-in, padding 0.3s linear; 
+
+        &.addbackground {
+            background: $secondary-color; 
+            padding-left: 2em; 
+        }
+
+        .logo {
+            width: 132px; 
+            height: 102px;
+            max-width: 120px; 
+            max-height: 102px;
+            transition: all 0.3s linear;
+            cursor: pointer;  
+            
+            &.resize {
+                width: 66px;
+                height: 51px;
+                max-width: 56px;
+                max-height: 51px;
+            }
+        }
+
+        .mb-auto {
+            flex: 1 1 auto;
+            justify-content: flex-end;
+            padding-right: 5em;
+
+            .nav-item {
+                padding: 0 1em; 
+                transition: background 0.25s linear; 
+
+                &.is-current {
+
+                    a {
+                        color: $primary-color; 
+                        font-weight: 700; 
+                    }
+                }
+
+                a {
+                    color: white; 
+                    font-size: 1rem; 
+                    font-weight: 400; 
+
+                    span {
+                        color: $primary-color; 
+                        font-size: 1rem; 
+                    }
+                }
+
+                &.active .nav-link:hover svg {
+                    color: white; 
+                }
+            }
+        }
+    }
+}
+
+//responsive
+@media (max-width: 992px) {
+    .logo {
+        display: none; 
+    }
+}

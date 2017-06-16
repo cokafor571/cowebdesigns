@@ -1,0 +1,87 @@
+@import "structure";
+@import "colors"; 
+@import "mixins";
+@import "animations";
+
+.work {
+    padding-top: 5em; 
+    padding-bottom: 3em; 
+
+    .extend-line {
+        padding: 0;
+
+        .main {
+            width: 100%;
+            border-bottom: 2px solid red; 
+            line-height: 0.18em;
+            color: $secondary-color; 
+            font-size: 2.25rem;
+
+            span {
+                background: #fff;
+                padding: 0 10px; 
+            }
+        }
+    }
+
+    .work-row {
+        margin-top: 5em; 
+
+        .list-group {
+            flex-direction: row;
+            flex-wrap: wrap; 
+            justify-content: center; 
+
+            a {
+                position: relative;
+                width: auto;
+                height: auto; 
+                @include overlay( $overlay-color ); 
+
+                i {
+                    @include overlay-icon; 
+                }
+        
+                .list-group-item {
+                    width: $img-cont_width; 
+
+                    img {
+                        width: $img-width_normal;
+                        height: $img-height_normal;   
+                    }
+                }
+            }
+        }
+    }
+}
+
+//queries
+@media (max-width: $img-resize) {
+
+    .work {
+
+        .work-row {
+
+            .list-group {
+
+                .list-group-item {
+                    width: $img-cont_resize; 
+
+                    img {
+                        width: $img-width_resize;
+                        height: $img-height_resize;   
+                    }
+                }
+            }
+        }
+    }
+}
+
+//animations 
+.is-visible {
+    
+    &.work-lazy {
+        animation: xUp .5s ease-out both,
+                   fadeIn .5s ease-out both; 
+    }
+}

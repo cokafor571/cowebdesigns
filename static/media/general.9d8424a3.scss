@@ -1,0 +1,68 @@
+@import "fonts";
+@import "typography"; 
+@import "colors"; 
+
+.general {
+    background: #eee; 
+    padding-top: 5em; 
+    padding-bottom: 3em; 
+
+    .extend-line {
+        padding: 0; 
+
+        .main {
+            width: 100%;
+            border-bottom: 2px solid red; 
+            line-height: 0.18em;
+            color: $secondary-color; 
+            font-size: 2.25rem;
+
+            span {
+                background: #eee;
+                padding: 0 10px; 
+            }
+        }
+    }
+
+    .about-row {
+        margin-top: 5em; 
+
+        h4 {
+            color: red;
+            font-family: $font_sans;  
+
+            span {
+                padding: 0 15px; 
+                font-size: 2rem; 
+            }
+        }
+
+        p {
+            font-family: $font_sans; 
+            word-spacing: 0.1em; 
+        }
+    }
+}
+
+//animations 
+.is-visible {
+    
+    &.general-lazy {
+        animation: xUp .5s ease-out both,
+                   fadeIn .5s ease-out both; 
+    }
+
+    &.whoiam {
+        animation: xIn .75s .25s ease-out both,
+               fadeIn .75s .25s ease-out both;
+        
+        margin-bottom: 1em; 
+    }
+
+    &.whatido {
+        animation: xIn 1s .5s ease-out both,
+               fadeIn 1s .5s ease-out both;
+        
+        margin-bottom: 1em; 
+    }
+}
