@@ -1,2 +1,3 @@
 User-Agent: *
 Disallow: /images/
+Disallow: /bundle.js
